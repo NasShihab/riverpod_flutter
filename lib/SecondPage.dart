@@ -10,6 +10,10 @@ class SecondPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final int counter = ref.watch(counterProvider);
 
+    ref.listen(counterProvider, (previous, next) {
+
+    });
+
     return Scaffold(
       appBar: AppBar(
         actions: [
