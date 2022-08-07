@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final counterProvider = StateProvider.autoDispose((ref) => 0);
 
@@ -12,6 +12,12 @@ class SecondPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(onPressed: () {
+            //refresh the page
+            ref.refresh(counterProvider);
+          }, icon: Icon(Icons.refresh)),
+        ],
         centerTitle: true,
         title: Text('Counter Page'),
       ),
